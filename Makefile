@@ -27,7 +27,7 @@ IregV: ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/sr
 clean:
     rm -rf ./build/src/*.o ./build/test/*.o ./bin/*.exe
 
-test:  ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o /build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/Checkword.o ./build/test/test.o
+test:  ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/Checkword.o ./build/test/test.o
     g++ -std=c++17 -o ./bin/test ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o /build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/Checkword.o  ./build/test/test.o 
     ./bin/test
 
