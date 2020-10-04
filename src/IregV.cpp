@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 	setlocale(LC_ALL, "Russian");
 	Menu();
 	return 0;
