@@ -1,10 +1,10 @@
 all:
-    g++ TRPO_project.cpp -o TRPO_project
+    g++ IregV.cpp -o IregV
     
-    TRPO_project test
+    IregV test
 
-TRPO_project: ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/Checkword.o ./build/src/ThirdTest.o
-    g++ -std=c++17 ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/Checkword.o /build/src/ThirdTest.o -o ./bin/TRPO_project
+IregV: ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/Checkword.o ./build/src/ThirdTest.o
+    g++ -std=c++17 ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/Checkword.o /build/src/ThirdTest.o -o ./bin/IregV
 
 
 ./build/src/IregV.o: ./src/IregV.cpp
