@@ -3,7 +3,7 @@ CFLAGS = -c -Wall -Werror
 
 .PHONY: clean run all test
 
-all: IregV test
+all:bin/source
 
 bin/source: build/src/IregV.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/Menu.o build/src/CheckWord.o 
 		$(g) $^ -o $@
