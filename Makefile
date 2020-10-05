@@ -8,39 +8,39 @@ all:bin/source
 bin/source: build/src/IregV.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/Menu.o build/src/CheckWord.o 
 		$(g) $^ -o $@
 
-build/src/IregV.o: build/src/IregV.cpp
+build/src/IregV.o: src/IregV.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/Menu.o: build/src/Menu.cpp
+build/src/Menu.o: src/Menu.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/CheckWord.o: build/src/CheckWord.cpp
+build/src/CheckWord.o: CheckWord.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/FirstTest.o: build/src/FirstTest.cpp
+build/src/FirstTest.o: FirstTest.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/SecondTest.o: build/src/SecondTest.cpp
+build/src/SecondTest.o: SecondTest.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/ThirdTest.o: build/src/ThirdTest.cpp
+build/src/ThirdTest.o: src/ThirdTest.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-GCheckWord_DIR = thirdparty/googletest
+Gtest_DIR = thirdparty/googletest
 
 test: testlib bin/source-test
 
 testlib:
-	g++ -std=c++17 -isystem ${GCheckWord_DIR}/include -I${GCheckWord_DIR} \
-    -pthread -c ${GCheckWord_DIR}/src/gCheckWord-all.cc -o build/CheckWord/gCheckWord-all.o
-	ar -rv build/CheckWord/libgCheckWord.a build/CheckWord/gCheckWord-all.o
+	g++ -std=c++17 -isystem ${Gtest_DIR}/include -I${Gtest_DIR} \
+    -pthread -c ${Gtest_DIR}/src/gtest-all.cc -o build/test/gtest-all.o
+	ar -rv build/test/libgCheckWord.a build/test/gCheckWord-all.o
 
-bin/source-test: build/CheckWord/IregV.o build/src/CheckWord.o build/src/source.o build/src/Menu.o
-	g++ -std=c++17 -isystem ${GCheckWord_DIR}/include -pthread $^ \
-	build/CheckWord/libgCheckWord.a -o $@
+bin/source-test: build/test/IregV.o build/src/test.o build/src/source.o build/src/Menu.o
+	g++ -std=c++17 -isystem ${Gtest_DIR}/include -pthread $^ \
+	build/test/libgtest.a -o $@
 
 build/test/test.o:
-	$(g) -std=c++17 $(CFLAGS) CheckWord/IregV.cpp -I $(GCheckWord_DIR)/include -o $@
+	$(g) -std=c++17 $(CFLAGS) test/IregV.cpp -I $(Gtest_DIR)/include -o $@
 
 run:
 		bin/source
