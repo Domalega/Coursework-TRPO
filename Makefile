@@ -1,58 +1,36 @@
-g = g++
-CFLAGS = -c -Wall -Werror
-
-.PHONY: clean run all test
-
 all:IregV test
 
-IregV: build/src/IregV.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/Menu.o build/src/CheckWord.o build/src/WinLose.o
-		$(g) $^ -o $@
+IregV: ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/Checkword.o ./build/src/ThirdTest.o ./build/src/WinLose.o
+	g++ -std=c++17 -o ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/Checkword.o ./build/src/ThirdTest.o ./build/src/WinLose.o ./bin/IregV
 
-build/src/IregV.o: src/IregV.cpp
-		$(g) $(CFLAGS) $^ -o $@
+./build/src/IregV.o: ./src/IregV.cpp
+	g++ -std=c++17 -c ./src/IregV.cpp -o ./build/src/IregV.o
 
-build/src/Menu.o: src/Menu.cpp
-		$(g) $(CFLAGS) $^ -o $@
+./build/src/Menu.o: ./src/Menu.cpp
+	g++ -std=c++17 -c ./src/Menu.cpp -o ./build/src/Menu.o
+./build/src/Checkword.o: ./src/Checkword.cpp
+	g++ -std=c++17 -c ./src/Checkword.cpp -o ./build/src/Checkword.o
 
-build/src/CheckWord.o: src/CheckWord.cpp
-		$(g) $(CFLAGS) $^ -o $@
+./build/src/TestWord.o: ./src/TestWord.cpp
+	g++ -std=c++17 -c ./src/TestWord.cpp -o ./build/src/TestWord.o
 
-build/src/FirstTest.o: src/FirstTest.cpp
-		$(g) $(CFLAGS) $^ -o $@
+./build/src/FirstTest.o: ./src/FirstTest.cpp
+	g++ -std=c++17 -c ./src/FirstTest.cpp -o ./build/src/FirstTest.o
 
-build/src/SecondTest.o: src/SecondTest.cpp
-		$(g) $(CFLAGS) $^ -o $@
+./build/src/SecondTest.o: ./src/SecondTest.cpp
+	g++ -std=c++17 -c ./src/SecondTest.cpp -o ./build/src/SecondTest.o
 
-build/src/ThirdTest.o: src/ThirdTest.cpp
-		$(g) $(CFLAGS) $^ -o $@
+./build/src/ThirdTest.o: ./src/ThirdTest.cpp
+	g++ -std=c++17 -c ./src/ThirdTest.cpp -o ./build/src/ThirdTest.o
 
-build/src/WinLose.o: src/WinLose.cpp
-		$(g) $(CFLAGS) $^ -o $@
-
-Gtest_DIR = thirdparty/googletest
-
-test: testlib bin/source-test
-
-testlib:
-	g++ -std=c++17 -isystem ${Gtest_DIR}/include -I${Gtest_DIR} \
-    -pthread -c ${Gtest_DIR}/src/gtest-all.cc -o build/test/gtest-all.o
-	ar -rv build/test/libgCheckWord.a build/test/gCheckWord-all.o
-
-bin/source-test: build/test/test.o build/src/IregV.o build/src/CheckWord.o build/src/Menu.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/WinLose.o
-	g++ -std=c++17 -isystem ${Gtest_DIR}/include -pthread $^ \
-	build/test/libgtest.a -o $@
-
-build/test/test.o:
-	$(g) -std=c++17 $(CFLAGS) test/test.cpp -I $(Gtest_DIR)/include -o $@
-
-run:
-		bin/source
-
-runtest:
-		bin/source-test
+./build/src/WinLose.o: ./src/WinLose.cpp
+	g++ -std=c++17 -c ./src/WinLose.cpp -o ./build/src/WinLose.o
 
 clean:
-		rm -rf build/src/*.o
+	rm -rf ./build/src/*.o ./build/test/*.o ./bin/*.exe
 
-cleanCheckWord:
-		rm build/test/*.o
+test:  ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o /build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/Checkword.o /build/src/WinLose.o ./build/test/test.o
+	g++ -std=c++17 -o ./bin/test ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o /build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/Checkword.o ./build/src/WinLose.o ./build/test/test.o ./bin/test
+
+./build/test/test.o: ./test/test.cpp
+	g++ -std=c++17 -c ./test/test.cpp  -o  ./build/test/test.o
