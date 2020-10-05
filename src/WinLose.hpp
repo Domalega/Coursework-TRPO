@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void WinLose(
+int WinLose(
         string* V2,
         string* V3,
         string* List1,

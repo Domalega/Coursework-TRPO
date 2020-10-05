@@ -4,4 +4,3 @@
 int CheckWord();
 
 #endif
-

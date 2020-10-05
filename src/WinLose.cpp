@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void WinLose(
+int WinLose(
         string* V2,
         string* V3,
         string* List1,
@@ -18,4 +18,5 @@ void WinLose(
         *lose += 1;
         *count += 1;
     }
+    return *win;
 }
