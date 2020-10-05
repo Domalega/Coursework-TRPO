@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include<cstdlib>
 #include "CheckWord.hpp"
 #include "TestWord.hpp"
 
