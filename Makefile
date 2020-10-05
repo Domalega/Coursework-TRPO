@@ -1,7 +1,7 @@
 all:IregV test
 
 IregV: ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/ThirdTest.o ./build/src/WinLose.o
-	g++ -std=c++17 -o ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/ThirdTest.o ./build/src/WinLose.o ./bin/IregV
+	g++ -std=c++17 -o ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/ThirdTest.o ./build/src/WinLose.o 
 
 ./build/src/IregV.o: ./src/IregV.cpp
 	g++ -std=c++17 -c ./src/IregV.cpp -o ./build/src/IregV.o
