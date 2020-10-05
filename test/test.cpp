@@ -4,7 +4,7 @@
 #include "../src/FirstTest.hpp"
 #include "../src/SecondTest.hpp"
 #include "../src/ThirdTest.hpp"
-#include "../src/Checkword.hpp"
+#include "../src/CheckWord.hpp"
 #include "../src/WinLose.hpp"
 #include "../thirdparty/catch.hpp"
 #include <iostream>
