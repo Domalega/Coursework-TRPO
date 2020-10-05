@@ -1,6 +1,6 @@
-all:IregV test
+all:IregV_test
 
-IregV: ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/ThirdTest.o ./build/src/WinLose.o
+IregV_test: ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/ThirdTest.o ./build/src/WinLose.o
 	g++ -std=c++17 -o ./build/src/IregV.o ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/ThirdTest.o ./build/src/WinLose.o 
 
 ./build/src/IregV.o: ./src/IregV.cpp
@@ -31,7 +31,7 @@ clean:
 	rm -rf ./build/src/*.o ./build/test/*.o ./bin/*.exe
 
 test:  ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o /build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o /build/src/WinLose.o ./build/test/test.o
-	g++ -std=c++17 -o ./bin/test ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o /build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/WinLose.o ./build/test/test.o ./bin/test
+	g++ -std=c++17 -o ./bin/test ./build/src/Menu.o ./build/src/FirstTest.o ./build/src/SecondTest.o /build/src/ThirdTest.o ./build/src/TestWord.o  ./build/src/CheckWord.o ./build/src/WinLose.o ./build/test/test.o 
 
 ./build/test/test.o: ./test/test.cpp
 	g++ -std=c++17 -c ./test/test.cpp  -o  ./build/test/test.o
