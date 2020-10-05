@@ -18,4 +18,5 @@ int WinLose(
         *lose += 1;
         *count += 1;
     }
+    return *win;
 }

@@ -11,10 +11,11 @@
 #include <string.h>
 
 using namespace std;
-TEST_CASE("check FirstTest", "[WinLose]")
+TEST_CASE("check WinLose", "[WinLose]")
 {
-    string V2, V3, List1, List2;
+    string V2 = "1", V3 = "1", List1 = "1", List2 = "1";
     int count = 0, win = 0, lose = 0;
-    WinLose(V2,V3,List1,List2,win,lose,count);
-    REQUIRE(win==1)
+    WinLose(&V2,&V3,&List1,&List2,&win,&lose,&count);
+    REQUIRE(win == 1);
+    REQUIRE(lose == 0);
 }
