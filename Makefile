@@ -14,13 +14,13 @@ build/src/IregV.o: src/IregV.cpp
 build/src/Menu.o: src/Menu.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/CheckWord.o: CheckWord.cpp
+build/src/CheckWord.o: src/CheckWord.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/FirstTest.o: FirstTest.cpp
+build/src/FirstTest.o: src/.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/SecondTest.o: SecondTest.cpp
+build/src/SecondTest.o: src/SecondTest.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
 build/src/ThirdTest.o: src/ThirdTest.cpp
