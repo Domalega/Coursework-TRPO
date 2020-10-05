@@ -17,7 +17,7 @@ build/src/Menu.o: src/Menu.cpp
 build/src/CheckWord.o: src/CheckWord.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
-build/src/FirstTest.o: src/.cpp
+build/src/FirstTest.o: src/FirstTest.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
 build/src/SecondTest.o: src/SecondTest.cpp
