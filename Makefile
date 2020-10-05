@@ -3,9 +3,9 @@ CFLAGS = -c -Wall -Werror
 
 .PHONY: clean run all test
 
-all:./src
+all:build/src
 
-./src: build/src/IregV.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/Menu.o build/src/CheckWord.o build/src/WinLose.o
+build/src: build/src/IregV.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/Menu.o build/src/CheckWord.o build/src/WinLose.o
 		$(g) $^ -o $@
 
 build/src/IregV.o: src/IregV.cpp
