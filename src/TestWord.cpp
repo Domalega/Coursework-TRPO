@@ -3,6 +3,7 @@
 #include "Menu.hpp"
 #include "SecondTest.hpp"
 #include "ThirdTest.hpp"
+#include <cstdlib>
 #include <iostream>
 #include <string>
 

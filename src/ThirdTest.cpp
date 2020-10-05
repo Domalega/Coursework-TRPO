@@ -1,12 +1,14 @@
+#include "WinLose.hpp"
+#include <algorithm>
+#include <cstdlib>
 #include <iostream>
 #include <string>
-#include <algorithm>
-#include "WinLose.hpp"
 
 using namespace std;
 
-int FirstTest()
+int ThirdTest()
 {
+    int count = 0, win = 0, lose = 0;
     string ListI[120]
             = {"arise",      "awake",  "be",     "bear",   "beat",    "become",
                "begin",      "bend",   "bet",    "bind",   "bite",    "bleed",
@@ -388,21 +390,27 @@ int FirstTest()
                          "побеждать",
                          "обматывать, изгибаться",
                          "писать"};
-	int listShuffle[120] = {};
-	for (int i = 0; i < 120; i++)
-		listShuffle[i] = i + 1;
-	random_shuffle(listShuffle, listShuffle + 120);
-	while (count != 20) {
+    int listShuffle[120] = {};
+    for (int i = 0; i < 120; i++)
+        listShuffle[i] = i + 1;
+    random_shuffle(listShuffle, listShuffle + 120);
+    while (count != 20) {
         string V2, V3, List1, List2;
-		cout << endl << ListI[listShuffle[count]] << endl << endl << "Введите оставшиеся формы неправильного глагола:" << endl;
-		cin >> V2;
-		cin >> V3;
-                List1 = ListV2[listShuffle[count]];
-                List2 = ListV3[listShuffle[count]];
-                WinLose(&V2, &V3, &List1, &List2, &win, &lose, &count);
-	}
-	cout << endl << win << " - Верных ответов" << endl << endl << lose << " - Неверных ответов" << endl;
-	system("pause");
-	system("cls");
-	return win;
+        cout << endl
+             << ListI[listShuffle[count]] << endl
+             << endl
+             << "Введите оставшиеся формы неправильного глагола:" << endl;
+        cin >> V2;
+        cin >> V3;
+        List1 = ListV2[listShuffle[count]];
+        List2 = ListV3[listShuffle[count]];
+        WinLose(&V2, &V3, &List1, &List2, &win, &lose, &count);
+    }
+    cout << endl
+         << win << " - Верных ответов" << endl
+         << endl
+         << lose << " - Неверных ответов" << endl;
+    system("pause");
+    system("cls");
+    return win;
 }
