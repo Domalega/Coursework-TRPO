@@ -3,9 +3,9 @@ CFLAGS = -c -Wall -Werror
 
 .PHONY: clean run all test
 
-all:bin/source
+all:bin/IregV 
 
-bin/source: build/src/IregV.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/Menu.o build/src/CheckWord.o 
+bin/IregV: build/src/IregV.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/Menu.o build/src/CheckWord.o build/src/WinLose.o build/src/TestWord.o
 		$(g) $^ -o $@
 
 build/src/IregV.o: src/IregV.cpp
@@ -26,6 +26,12 @@ build/src/SecondTest.o: src/SecondTest.cpp
 build/src/ThirdTest.o: src/ThirdTest.cpp
 		$(g) $(CFLAGS) $^ -o $@
 
+build/src/TestWord.o: src/TestWord.cpp
+		$(g) $(CFLAGS) $^ -o $@
+
+build/src/WinLose.o: src/WinLose.cpp
+		$(g) $(CFLAGS) $^ -o $@
+
 Gtest_DIR = thirdparty/googletest
 
 test: testlib bin/source-test
@@ -35,17 +41,17 @@ testlib:
     -pthread -c ${Gtest_DIR}/src/gtest-all.cc -o build/test/gtest-all.o
 	ar -rv build/test/libgCheckWord.a build/test/gCheckWord-all.o
 
-bin/source-test: build/test/IregV.o build/src/test.o build/src/source.o build/src/Menu.o
+bin/source-test: build/test/test.o build/src/IregV.o build/src/CheckWord.o build/src/Menu.o build/src/FirstTest.o build/src/SecondTest.o build/src/ThirdTest.o build/src/WinLose.o
 	g++ -std=c++17 -isystem ${Gtest_DIR}/include -pthread $^ \
 	build/test/libgtest.a -o $@
 
 build/test/test.o:
-	$(g) -std=c++17 $(CFLAGS) test/IregV.cpp -I $(Gtest_DIR)/include -o $@
+	$(g) -std=c++17 $(CFLAGS) test/test.cpp -I $(Gtest_DIR)/include -o $@
 
 run:
 		bin/source
 
-runCheckWord:
+runtest:
 		bin/source-test
 
 clean:
