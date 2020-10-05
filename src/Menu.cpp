@@ -1,8 +1,8 @@
 #include "CheckWord.hpp"
 #include "TestWord.hpp"
+#include <cstdlib>
 #include <iostream>
 #include <string>
-#include <cstdlib>
 
 using namespace std;
 
