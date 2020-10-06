@@ -410,7 +410,5 @@ int SecondTest()
          << win << " - Верных ответов" << endl
          << endl
          << lose << " - Неверных ответов" << endl;
-    system("pause");
-    system("cls");
     return win;
 }
