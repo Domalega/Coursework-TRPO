@@ -25,23 +25,17 @@ int TestWord()
         cin >> Test;
         if (Test == "1") {
             FirstTest();
-            system("pause");
-            system("cls");
         }
         if (Test == "2") {
             SecondTest();
-            system("cls");
         }
         if (Test == "3") {
             ThirdTest();
-            system("cls");
         }
         if (Test == "4") {
-            system("cls");
             Menu();
         }
         if (Test == "5") {
-            system("cls");
             cout << "Выходим из программы..." << endl;
             exit(0);
         }
