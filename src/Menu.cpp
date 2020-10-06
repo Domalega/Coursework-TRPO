@@ -417,7 +417,7 @@ menu:
              << endl;
         cin >> F;
         if (F == "1")
-        goto menu;
+            goto menu;
         if (F == "2") {
             cout << "Выходим из программы..." << endl;
             exit(0);
