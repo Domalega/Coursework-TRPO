@@ -415,23 +415,18 @@ back2:
          << "3. Выйти из программы" << endl;
     cin >> a;
     if (a == "1") {
-        system("cls");
         goto back;
     }
     if (a == "2") {
-        system("cls");
         Menu();
     }
     if (a == "3") {
-        system("cls");
         cout << "Выходим из программы..." << endl;
         exit(0);
     } else {
-        system("cls");
         cout << "Ошибка ввода!\n"
              << "Введите номер пункта!" << endl
              << endl;
         goto back2;
     }
-    system("pause");
 }
