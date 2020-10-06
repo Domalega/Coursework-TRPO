@@ -399,43 +399,34 @@ menu:
          << endl;
     cin >> Word;
     if (Word == "1") {
-        system("cls");
         CheckWord();
     }
     if (Word == "2") {
-        system("cls");
         TestWord();
     }
     if (Word == "3") {
         string F;
-        system("cls");
         cout << "Список неправильных глаголов: " << endl;
         for (int i = 0; i < 120; i++)
             cout << ListI[i] << " -- " << ListV2[i] << " -- " << ListV3[i]
                  << " -- " << ListT[i] << endl;
         cout << endl;
-        system("pause");
-        system("cls");
         cout << endl
              << "1. Вернуться в меню" << endl
              << "2. Выйти из программы" << endl
              << endl;
         cin >> F;
         if (F == "1")
-            system("cls");
         goto menu;
         if (F == "2") {
-            system("cls");
             cout << "Выходим из программы..." << endl;
             exit(0);
         }
     }
     if (Word == "4") {
-        system("cls");
         cout << "Выходим из программы..." << endl;
         exit(0);
     } else {
-        system("cls");
         cout << "Ошибка ввода!" << endl;
         goto menu;
     }
